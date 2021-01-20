@@ -280,6 +280,9 @@ void xmrig::SelfSelectClient::submitOriginDaemon(const JobResult& result)
     LOG_INFO("%s " GREEN_BOLD("submitted to origin daemon") " (%" PRId64 "/%" PRId64 ") " 
         " diff " WHITE("%" PRIu64) " vs. " WHITE("%" PRIu64),
         Tags::origin(), m_origin_submitted, m_origin_not_submitted, m_targetdiff, result.actualDiff(), result.diff);
+
+    // Ensure that the latest block template is available after block submission
+    getBlockTemplate();
 }
 
 void xmrig::SelfSelectClient::onHttpData(const HttpData &data)
