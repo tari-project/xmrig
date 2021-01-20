@@ -107,7 +107,8 @@ R"===(
             "tls": false,
             "tls-fingerprint": null,
             "daemon": false,
-            "self-select": null
+            "self-select": null,
+            "submit-to-origin": false
         }
     ],
     "print-time": 60,
